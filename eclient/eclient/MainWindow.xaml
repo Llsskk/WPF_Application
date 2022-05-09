@@ -1,0 +1,80 @@
+﻿<Window x:Class="eclient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:eclient"
+        mc:Ignorable="d"
+        Title="Клиенты - юридические лица" Height="500" Width="1000">
+    <DockPanel >
+        <TabControl >
+            <TabItem Header="Клиенты">
+                <DockPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10" DockPanel.Dock="Bottom" Width="900" >
+                        <Button Click="Person_Add_Button_Click" Width="250" Height="40">Добавить</Button>
+                        <Button Click="Person_Update_Button_Click" Width="400" Height="40">Редактировать</Button>
+                        <Button Click="Person_Delete_Button_Click" Width="250" Height="40">Удалить</Button>
+                    </StackPanel>
+                    <DataGrid x:Name="dgPerson" AutoGenerateColumns="False" > 
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Шифр клиента" Binding="{Binding Shifer}"/>
+                            <DataGridTextColumn Header="ИНН клиента" Binding="{Binding Inn}"/>
+                            <DataGridTextColumn Header="Тип клиента" Binding="{Binding Type}"/>
+                            <DataGridTextColumn Header="Дата регистрации клиента" Binding="{Binding Data}"/>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Компании">
+                <DockPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10" DockPanel.Dock="Bottom" Width="900" >
+                        <Button Click="Company_Add_Button_Click" Width="250" Height="40">Добавить</Button>
+                        <Button Click="Company_Update_Button_Click" Width="400" Height="40">Редактировать</Button>
+                        <Button Click="Company_Delete_Button_Click" Width="250" Height="40">Удалить</Button>
+                    </StackPanel>
+                    <DataGrid x:Name="dgCompany" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Полное наименование" Binding="{Binding NameFull}"/>
+                            <DataGridTextColumn Header="Краткое наименование" Binding="{Binding NameShort}"/>
+                            <DataGridTextColumn Header="Номер регистрации" Binding="{Binding NumberReg}"/>
+                            <DataGridTextColumn Header="Дата регистрации" Binding="{Binding DataReg}"/>
+                            <DataGridTextColumn Header="Краткое наименование органа регистрации" Binding="{Binding OrgRegistrationShort}"/>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Организационно-правовая форма">
+                <DockPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10" DockPanel.Dock="Bottom" Width="900" >
+                        <Button Click="OrgLegForms_Add_Button_Click" Width="250" Height="40">Добавить</Button>
+                        <Button Click="OrgLegForms_Update_Button_Click" Width="400" Height="40">Редактировать</Button>
+                        <Button Click="OrgLegForms_Delete_Button_Click" Width="250" Height="40">Удалить</Button>
+                    </StackPanel>
+                    <DataGrid x:Name="dgOrgLegForms" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Полное наименование ОПФ" Binding="{Binding NameFull}"/>
+                            <DataGridTextColumn Header="Краткое наименование ОПФ" Binding="{Binding NameShort}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+            <TabItem Header="Орган регистрации">
+                <DockPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10" DockPanel.Dock="Bottom" Width="900" >
+                        <Button Click="OrgRegistration_Add_Button_Click" Width="250" Height="40">Добавить</Button>
+                        <Button Click="OrgRegistration_Update_Button_Click" Width="400" Height="40">Редактировать</Button>
+                        <Button Click="OrgRegistration_Delete_Button_Click" Width="250" Height="40">Удалить</Button>
+                    </StackPanel>
+                    <DataGrid x:Name="dgOrgRegistration" AutoGenerateColumns="False" >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Полное наименование органа регистрации" Binding="{Binding NameFull}"/>
+                            <DataGridTextColumn Header="Краткое наименование органа регистрации" Binding="{Binding NameShort}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </DockPanel>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>
